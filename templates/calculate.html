@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculated Report</title>
+  <style>
+    body { font-family: sans-serif; padding: 40px; background-color: #f9fcff; text-align: center; }
+    table { border-collapse: collapse; width: 80%; margin: 30px auto; background-color: white; }
+    th, td { border: 1px solid #ccc; padding: 10px; text-align: center; }
+    th { background-color: #3498db; color: white; }
+    button { padding: 12px 24px; font-size: 16px; background-color: #27ae60; color: white; border: none; margin-top: 20px; border-radius: 8px; }
+  </style>
+</head>
+<body>
+  <h2>✅ Summary for: {{ date }}</h2>
+  <img src="{{ chart_path }}" alt="Chart" style="max-width:90%; margin: 30px auto;" />
+  <h3>📋 Percentage Change Summary</h3>
+  <table>
+    <tr>
+      <th>WIDTH</th>
+      <th>PREVIOUS MONTH VALUE</th>
+      <th>PRESENT MONTH VALUE</th>
+      <th>% CHANGE</th>
+    </tr>
+    {% for row in summary %}
+    <tr>
+      <td>{{ row['WIDTH'] }}</td>
+      <td>{{ "%.2f"|format(row['PREVIOUS MONTH VALUE']) }}</td>
+      <td>{{ "%.2f"|format(row['PRESENT MONTH VALUE']) }}</td>
+      <td>{{ row['% CHANGE'] }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  <a href="/download_report"><button>⬇️ Download Final Report</button></a>
+</body>
+</html>

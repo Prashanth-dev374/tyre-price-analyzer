@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Visualization</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h1>📊 Chart for Date: {{ date }}</h1>
+  <img src="{{ url_for('static', filename=image_path.split('/')[-1]) }}" width="800">
+  <br><br>
+  <a href="/">🔙 Go Back</a>
+</body>
+</html>

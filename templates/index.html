@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tyre Price Analyzer</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h1>🛞 Tyre Price Analyzer</h1>
+
+  <form action="/process" method="POST" enctype="multipart/form-data">
+    <h2>📊 Generate Report</h2>
+    <input type="file" name="file" required>
+    <br><br>
+    <button type="submit">Generate Pivot Report</button>
+  </form>
+
+  <form action="/visualize" method="POST" enctype="multipart/form-data">
+    <h2>📈 Visualize Latest Data</h2>
+    <input type="file" name="file" required>
+    <br><br>
+    <button type="submit">Show Bar Chart</button>
+  </form>
+
+  <form action="/table" method="POST" enctype="multipart/form-data">
+    <h2>📋 View Latest Table</h2>
+    <input type="file" name="file" required>
+    <br><br>
+    <button type="submit">Show Table</button>
+  </form>
+</body>
+</html>

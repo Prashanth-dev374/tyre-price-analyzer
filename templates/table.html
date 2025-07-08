@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Table View</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h1>📋 Latest Table for {{ date }}</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>WIDTH</th>
+        <th>OLD PRICE</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in data %}
+        <tr>
+          <td>{{ row['WIDTH'] }}</td>
+          <td>{{ row['OLD PRICE'] }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <br><br>
+  <a href="/">🔙 Go Back</a>
+</body>
+</html>
